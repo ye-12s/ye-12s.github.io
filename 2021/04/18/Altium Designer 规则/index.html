@@ -1,0 +1,250 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>AD 布线规则设定 | ye-12sの博客</title><meta name="keywords" content="布线规则,AD"><meta name="author" content="ye-12s"><meta name="copyright" content="ye-12s"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="根据PCB的设计，Altium Designer（下文简称AD）提供了10种设计规则。这些设计规则则包括导线放置、导线布线方法、元件放置、布线规则、元件移动和信号完整性等规则。 根据这些规则AD可以进行自动布局和自动布线。布线是否成功很大程度上在于布局的合理性和规则的设定，这需要设计者的设计经验。 打开“PCB设计规则和约束”对话框。该对话框左侧是设计规则的总类。左侧列出的设计规则，包括Elect">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AD 布线规则设定">
+<meta property="og:url" content="https://ye-12s.github.io/2021/04/18/Altium%20Designer%20%E8%A7%84%E5%88%99/index.html">
+<meta property="og:site_name" content="ye-12sの博客">
+<meta property="og:description" content="根据PCB的设计，Altium Designer（下文简称AD）提供了10种设计规则。这些设计规则则包括导线放置、导线布线方法、元件放置、布线规则、元件移动和信号完整性等规则。 根据这些规则AD可以进行自动布局和自动布线。布线是否成功很大程度上在于布局的合理性和规则的设定，这需要设计者的设计经验。 打开“PCB设计规则和约束”对话框。该对话框左侧是设计规则的总类。左侧列出的设计规则，包括Elect">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ye-12s.github.io/img/cover.jpg">
+<meta property="article:published_time" content="2021-04-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-12T08:23:34.757Z">
+<meta property="article:author" content="ye-12s">
+<meta property="article:tag" content="布线规则">
+<meta property="article:tag" content="AD">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ye-12s.github.io/img/cover.jpg"><link rel="shortcut icon" href="/img/cover.jpg"><link rel="canonical" href="https://ye-12s.github.io/2021/04/18/Altium%20Designer%20%E8%A7%84%E5%88%99/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'AD 布线规则设定',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-12-12 16:23:34'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><div class="aplayer" data-id="21177493" data-server="netease" data-type="playlist" data-fixed="true" data-listFolded="false" data-order="random" data-preload="none"></div><link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/my2.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/cover.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ye-12sの博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">AD 布线规则设定</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-17T16:00:00.000Z" title="发表于 2021-04-18 00:00:00">2021-04-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-12T08:23:34.757Z" title="更新于 2021-12-12 16:23:34">2021-12-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/PCB%E5%B8%83%E7%BA%BF%E8%A7%84%E5%88%99/">PCB布线规则</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="AD 布线规则设定"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>根据PCB的设计，Altium Designer（下文简称AD）提供了10种设计规则。这些设计规则则包括导线放置、导线布线方法、元件放置、布线规则、元件移动和信号完整性等规则。</p>
+<p>根据这些规则AD可以进行自动布局和自动布线。布线是否成功很大程度上在于布局的合理性和规则的设定，这需要设计者的设计经验。</p>
+<p>打开“PCB设计规则和约束”对话框。<br>该对话框左侧是设计规则的总类。<br>左侧列出的设计规则，包括Electrical（电气类型）、Routing（布线类型）、SMT（表面元件类型）等等。</p>
+<h4 id="一、电气规则设计"><a href="#一、电气规则设计" class="headerlink" title="一、电气规则设计"></a>一、电气规则设计</h4><p>Electrical规则是设置电路板在布线时必须遵守的。</p>
+<ol>
+<li>Clearance（安全距离）<br>安全距离设置的是PCB电路板在布置铜膜导线时，元件焊盘和焊盘之间、焊盘和导线之间、导线和导线之间的最小距离。</li>
+<li>Short Circuit(短路)<br>短路设置就是是否允许导线交叉。</li>
+<li>Un-Routed Net(未布线网络)<br>该选项可以指定网络检查布线是否成功，若不成功将保持飞线连接。</li>
+<li>Un-connected Pin （未连接管脚）<br>该选项对指定的网络检查是否所有元件管脚都连线了。</li>
+</ol>
+<h4 id="二、Routing-（布线设计）"><a href="#二、Routing-（布线设计）" class="headerlink" title="二、Routing （布线设计）"></a>二、Routing （布线设计）</h4><ol>
+<li>Width（导线宽度）<br>导线的宽度有三个值，分别为Max width（最大宽度）、Preferred Width(最佳宽度)、Min Width(最小宽度)三个值。系统对导线的宽度默认为10mil，单机每个项直接输入数值进行更改。</li>
+<li>Routing Topology （布线拓扑）<br>拓扑规则定义是采用的布线的拓扑逻辑约束。Protel DXP 中常用的布线约束为统计最短逻辑规则,用户可以根据具体的设计选择不同的布线拓扑规则。Protel DXP 提供了以下几种布线规则。<ul>
+<li>Shortest (最短)<br>该选项定义实在布线时选择所有节点的连线最短规则</li>
+<li>Horizontal (水平)<br>它采用连接节点的水平连线最短规则。</li>
+<li>Vertical （垂直）<br>它采和是连接所有节点，在垂直方向连线最短规则。</li>
+<li>Daisy Simple （简单雏菊）<br>它采用的是使用链式连通法则，从一点到另一点连通所有的节点，并使连线最短。</li>
+<li>Daisy-MidDriven （雏菊中点）<br>该规则选择一个 Source （源点），以它为中心向左右连通所有的节点，并使连线最短。</li>
+<li>Daisy Balanced （雏菊平衡）<br>它也选择一个源点，将所有的中间节点数目平均分成组，所有的组都连接在源点上，并使连线最短。</li>
+<li>Star Burst （星形）<br>该规则也是采用选择一个源点，以星形方式去连接别的节点，并使连线最短。</li>
+</ul>
+</li>
+<li> Routing Rriority （布线优先级别）<br>该规则用于设置布线的优先次序，设置的范围从 0~100 ，数值越大，优先级越高。</li>
+<li>Routing Layers （布线图）<br>该规则设置布线板导的导线走线方法。包括顶层和底层布线层，共有 32 个布线层可以设置。</li>
+<li>Routing Corners （拐角）<br>布线的拐角可以有 45 °拐角、 90 °拐角和圆形拐角三种。<br>从 Style 上拉菜单栏中可以选择拐角的类型。Setback 文本框用于设定拐角的长度。 To 文本框用于设置拐角的大小。</li>
+<li>Routing Via Style （导孔）<br>该规则设置用于设置布线中导孔的尺寸。</li>
+</ol>
+<h4 id="三、SMT（贴片类规则）-此规则默认为空"><a href="#三、SMT（贴片类规则）-此规则默认为空" class="headerlink" title="三、SMT（贴片类规则）(此规则默认为空)"></a>三、SMT（贴片类规则）(此规则默认为空)</h4><ol>
+<li>SMD To Corner<br>SMD焊盘与导线拐角处最小间距</li>
+<li>SMD To Plane<br>SMD焊盘与内层电源层过孔最小间距</li>
+<li>SMD Neck-Down<br>SMD焊盘引出导线宽度与SMD元器件焊盘宽度之间的比值关系</li>
+<li>SMD Entry<br>SMD焊盘引出导线的方向（任意角度、一角、一边）</li>
+</ol>
+<h4 id="四、Mask-阻焊层设计"><a href="#四、Mask-阻焊层设计" class="headerlink" title="四、Mask(阻焊层设计)"></a>四、Mask(阻焊层设计)</h4><ol>
+<li>Solder Mask Expansion （阻焊层延伸量）<br>该规则用于设计从焊盘到阻碍焊层之间的延伸距离。在电路板的制作时，阻焊层要预留一部分空间给焊盘。这个延伸量就是防止阻焊层和焊盘相重叠的。系统默认为4mil。<ul>
+<li> Paste Mask Expansion （表面粘着元件延伸量）<br>该规则设置表面粘着元件的焊盘和焊锡层孔之间的距离</li>
+</ul>
+</li>
+</ol>
+<h4 id="五、Plane-内层设计"><a href="#五、Plane-内层设计" class="headerlink" title="五、Plane(内层设计)"></a>五、Plane(内层设计)</h4><p>Plane （内层设计）规则用于多层板设计,有如下几种设置规则。</p>
+<ol>
+<li>Power Plane Connect Style （电源层连接方式）<br>电源层连接方式规则用于设置导孔到电源层的连接。</li>
+<li>Power Plane Clearance(电源层安全距离)<br>该规则用于设置电源层与穿过它的导孔之间的安全距离，即防止导线短路的最小距离，系统默认值 20mil 。 </li>
+<li>Polygon Connect style （敷铜连接方式）<br>该规则用于设置多边形敷铜与焊盘之间的连接方式。</li>
+</ol>
+<h4 id="六、Testpiont-（测试点设计）-此功能没用过不知道"><a href="#六、Testpiont-（测试点设计）-此功能没用过不知道" class="headerlink" title="六、Testpiont （测试点设计）(此功能没用过不知道)"></a>六、Testpiont （测试点设计）(<del>此功能没用过不知道</del>)</h4><ol>
+<li>Testpoint Style （测试点风格）</li>
+<li>Testpoint Usage （测试点用法）</li>
+</ol>
+<h4 id="七、Manufacturing-（电路板制板）"><a href="#七、Manufacturing-（电路板制板）" class="headerlink" title="七、Manufacturing （电路板制板）"></a>七、Manufacturing （电路板制板）</h4><ol>
+<li>Minimum annular Ring （最小焊盘环宽）<br>电路板制作时的最小焊盘宽度，即焊盘外直径和导孔直径之间的有效期值，系统默认值为 10 mil 。</li>
+<li>Acute Angle （导线夹角设置）<br>对于两条铜膜导线的交角，不小于 90 °。</li>
+<li>Hole size （导孔直径设置）<br>该规则用于设置导孔的内直径大小。可以指定导孔的内直径的最大值和最小值。</li>
+<li>Layers Pais （使用板层对）<br>在设计多层板时，如果使用了盲导孔，就要在这里对板层对进行设置。对话框中的复选取项用于选择是否允许使用板层对（ layers pairs ）设置。</li>
+<li>Hole to Hole Clearance.<br>该规则用于设置过孔、焊盘通孔与通孔之间间距。</li>
+<li>Minimum Soldeer Mask Sliver<br>该规则用于设置阻焊层之间最小间距。</li>
+<li>Silk To Solder Mask Clearance<br>该规则用于设置丝印层检测模式<ul>
+<li>Cheak Clearance To Exposed Copper<br>检查焊盘与丝印层之间的距离</li>
+<li>Check Clearance To Solder Mask Openings<br>检查丝印层与组焊层之间的距离</li>
+</ul>
+</li>
+<li>Silk To Silk Clearance<br>该规则用于设置丝印层文字之间的距离。</li>
+<li>Net Antenna(网络卷须容忍度,<del>没用过不清楚</del>)</li>
+<li>Board Outline Clearance（板轮廓间隙,<del>没用过不清楚</del>）</li>
+</ol>
+<h4 id="八、High-Speed（高频电路规则）"><a href="#八、High-Speed（高频电路规则）" class="headerlink" title="八、High Speed（高频电路规则）"></a>八、High Speed（高频电路规则）</h4><ol>
+<li>Parallel Segment<br>该规则用于设置用于设置平行走线，高速线与其他信号线间距和平行最大长度</li>
+<li>Length<br>该规则用于设置高速线走线最小、最大长度</li>
+<li>Matched Lengths<br>该规则用于设置不同网络走线之间长度最小差值</li>
+<li>Daisy Chain Stub Length<br>该规则用于设置菊花链分支最大长度</li>
+<li>Via Under SMD<br>该规则用于设置是否允许在焊盘下放置过孔</li>
+</ol>
+<h4 id="九、Placement（元器件放置规则）"><a href="#九、Placement（元器件放置规则）" class="headerlink" title="九、Placement（元器件放置规则）"></a>九、Placement（元器件放置规则）</h4><ol>
+<li>Room Definition<br>该规则用于设置元器件定义Room类别</li>
+<li>Component Clearance<br>该规则用于设置器件水平、垂直间距模式</li>
+<li>Component Orientations<br>该规则用于设置元器件摆放方向</li>
+<li>Permitted Layers<br>该规则用于设置允许板层放器件</li>
+<li>Nets To Ignore<br>该规则用于设置为自动布局时可忽略的网络</li>
+<li>Hight<br>该规则用于设置板层放器件高度范围</li>
+</ol>
+<h4 id="十、Signal-Integrity（信号完整性规则）"><a href="#十、Signal-Integrity（信号完整性规则）" class="headerlink" title="十、Signal Integrity（信号完整性规则）"></a>十、Signal Integrity（信号完整性规则）</h4><ol>
+<li>Signal Stimulus<br>激励信号规则</li>
+<li>Undershoot-Falling Edge<br>负下冲超调量限制规则</li>
+<li>Undershoot-Rising Edge<br>正下冲超调量限制规则</li>
+<li>Impedance. 阻抗限制规则</li>
+<li>Signal Top Value<br>高电平信号规则</li>
+<li>Signal Base Value<br>低电平信号规则</li>
+<li>Flight Time-Rising Edge<br>上升飞行时间规则</li>
+<li>Flight Time-Falling Edge<br>下降飞行时间规则</li>
+<li>Slope-Rising Edge<br>上升沿时间规则</li>
+<li>Slope-Falling Edge<br>下降沿时间规则</li>
+<li>Supply Nets<br>电源网络规则</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">ye-12s</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://ye-12s.github.io/2021/04/18/Altium%20Designer%20%E8%A7%84%E5%88%99/">https://ye-12s.github.io/2021/04/18/Altium%20Designer%20%E8%A7%84%E5%88%99/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ye-12s.github.io" target="_blank">ye-12sの博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%B8%83%E7%BA%BF%E8%A7%84%E5%88%99/">布线规则</a><a class="post-meta__tags" href="/tags/AD/">AD</a></div><div class="post_share"><div class="social-share" data-image="/img/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2021/04/19/StringtoHex/"><img class="prev-cover" src="/img/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">String To Hex</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/my2.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ye-12s</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ye-12s"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ye-12s" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:chen96993216@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">分享知识，重拾知识。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%94%B5%E6%B0%94%E8%A7%84%E5%88%99%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text">一、电气规则设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Routing-%EF%BC%88%E5%B8%83%E7%BA%BF%E8%AE%BE%E8%AE%A1%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">二、Routing （布线设计）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E3%80%81SMT%EF%BC%88%E8%B4%B4%E7%89%87%E7%B1%BB%E8%A7%84%E5%88%99%EF%BC%89-%E6%AD%A4%E8%A7%84%E5%88%99%E9%BB%98%E8%AE%A4%E4%B8%BA%E7%A9%BA"><span class="toc-number">3.</span> <span class="toc-text">三、SMT（贴片类规则）(此规则默认为空)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E3%80%81Mask-%E9%98%BB%E7%84%8A%E5%B1%82%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.</span> <span class="toc-text">四、Mask(阻焊层设计)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%94%E3%80%81Plane-%E5%86%85%E5%B1%82%E8%AE%BE%E8%AE%A1"><span class="toc-number">5.</span> <span class="toc-text">五、Plane(内层设计)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AD%E3%80%81Testpiont-%EF%BC%88%E6%B5%8B%E8%AF%95%E7%82%B9%E8%AE%BE%E8%AE%A1%EF%BC%89-%E6%AD%A4%E5%8A%9F%E8%83%BD%E6%B2%A1%E7%94%A8%E8%BF%87%E4%B8%8D%E7%9F%A5%E9%81%93"><span class="toc-number">6.</span> <span class="toc-text">六、Testpiont （测试点设计）(此功能没用过不知道)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%83%E3%80%81Manufacturing-%EF%BC%88%E7%94%B5%E8%B7%AF%E6%9D%BF%E5%88%B6%E6%9D%BF%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">七、Manufacturing （电路板制板）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AB%E3%80%81High-Speed%EF%BC%88%E9%AB%98%E9%A2%91%E7%94%B5%E8%B7%AF%E8%A7%84%E5%88%99%EF%BC%89"><span class="toc-number">8.</span> <span class="toc-text">八、High Speed（高频电路规则）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B9%9D%E3%80%81Placement%EF%BC%88%E5%85%83%E5%99%A8%E4%BB%B6%E6%94%BE%E7%BD%AE%E8%A7%84%E5%88%99%EF%BC%89"><span class="toc-number">9.</span> <span class="toc-text">九、Placement（元器件放置规则）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E3%80%81Signal-Integrity%EF%BC%88%E4%BF%A1%E5%8F%B7%E5%AE%8C%E6%95%B4%E6%80%A7%E8%A7%84%E5%88%99%EF%BC%89"><span class="toc-number">10.</span> <span class="toc-text">十、Signal Integrity（信号完整性规则）</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/04/19/StringtoHex/" title="String To Hex"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="String To Hex"/></a><div class="content"><a class="title" href="/2021/04/19/StringtoHex/" title="String To Hex">String To Hex</a><time datetime="2021-04-18T16:00:00.000Z" title="发表于 2021-04-19 00:00:00">2021-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/18/Altium%20Designer%20%E8%A7%84%E5%88%99/" title="AD 布线规则设定"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AD 布线规则设定"/></a><div class="content"><a class="title" href="/2021/04/18/Altium%20Designer%20%E8%A7%84%E5%88%99/" title="AD 布线规则设定">AD 布线规则设定</a><time datetime="2021-04-17T16:00:00.000Z" title="发表于 2021-04-18 00:00:00">2021-04-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By ye-12s</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
